@@ -1,0 +1,6 @@
+# java result directory
+target
+
+# Intellij-specific stuff
+*.iml
+.idea
