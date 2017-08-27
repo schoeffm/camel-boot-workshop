@@ -1,0 +1,114 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>reveal.js</title>
+
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/css/reveal.min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/css/theme/moon.min.css">
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/lib/css/zenburn.min.css">
+
+    <style type="text/css">
+        .reveal b, .reveal strong, .reveal .emph {
+            background: #eee8d5;
+            padding: 0 0.4rem;
+            color: #002b36;
+            font-weight: 600;
+        }
+    </style>
+
+    <!-- Printing and PDF exports -->
+    <script>
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = (window.location.search.match( /print-pdf/gi )
+            ? '//cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/css/print/pdf.min.css'
+            : '//cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/css/print/paper.min.css');
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+</head>
+
+<body>
+<div class="reveal">
+    <div class="slides">
+
+        <section>
+            <!-- Title -->
+            <section data-markdown>
+                <textarea data-template>
+                    #### *cloud-native architecture with ...*
+                    # Spring Boot
+                    #### *... in a nutshell*
+                </textarea>
+            </section>
+
+            <!-- Agenda -->
+            <section data-markdown>
+                <textarea data-template>
+                    ## Agenda
+                    - Spring (Boot) und seine Wurzeln
+                        - Spring vs. Spring Boot
+                    - Demo: erste Microservice(s) mit Spring Boot
+                    - Demo: Deployment in Pivotal Cloud Foundry
+                </textarea>
+            </section>
+        </section>
+
+
+        <section>
+            <section data-markdown>
+                <textarea data-template>
+                    ## Spring (Boot) und seine Wurzeln
+                </textarea>
+            </section>
+
+            <section data-markdown>
+                <textarea data-template>
+                    - Spring == DI als Gegenstück zu J2EE
+                </textarea>
+            </section>
+
+        </section>
+
+        <section>
+            <section data-markdown>
+                <textarea data-template>
+                    ## Demo
+                    #### Microservices mit Spring Boot
+                </textarea>
+            </section>
+        </section>
+
+        <section>
+            <section data-markdown>
+                <textarea data-template>
+                    ## Spring (Boot) und seine Wurzeln
+                    öfkasjalk fökjf öakjföaksfjöksaj föaksjf öakj ö
+                </textarea>
+            </section>
+        </section>
+    </div>
+</div>
+
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/lib/js/head.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/js/reveal.min.js"></script>
+<script>
+    Reveal.initialize({
+        dependencies: [
+            { src: '//cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/plugin/markdown/marked.js' },
+            { src: '//cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/plugin/markdown/markdown.js' },
+            // { src: '//cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/plugin/notes/notes.js', async: true },
+            { src: '//cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/plugin/highlight/highlight.js', async: true,
+                callback: function() { hljs.initHighlightingOnLoad(); }
+            }
+        ]
+    });
+</script>
+</body>
+</html>
