@@ -1,0 +1,9 @@
+server:
+  port: 8080
+
+management:
+  security:
+    enabled: false
+
+workshop:
+  backendHost: localhost:8081
