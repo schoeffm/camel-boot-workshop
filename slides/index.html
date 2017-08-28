@@ -6,6 +6,7 @@
     <title>reveal.js</title>
 
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/css/reveal.min.css">
+    <!--link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/css/theme/league.min.css"-->
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/css/theme/moon.min.css">
 
     <!-- Theme used for syntax highlighting of code -->
@@ -50,10 +51,11 @@
             <section data-markdown>
                 <textarea data-template>
                     ## Agenda
-                    - Spring (Boot) und seine Wurzeln
-                        - Spring vs. Spring Boot
-                    - Demo: erste Microservice(s) mit Spring Boot
-                    - Demo: Deployment in Pivotal Cloud Foundry
+                    - a little bit of history 
+                    - demo: microservice(s) with Spring Boot
+                    - demo: Camel with Spring Boot
+                    - demo: cloud-deployment
+                    - outlook 
                 </textarea>
             </section>
         </section>
@@ -62,23 +64,72 @@
         <section>
             <section data-markdown>
                 <textarea data-template>
-                    ## Spring (Boot) und seine Wurzeln
+                    ## a little bit of history
                 </textarea>
             </section>
 
-            <section data-markdown>
-                <textarea data-template>
-                    - Spring == DI als Gegenstück zu J2EE
-                </textarea>
+            <section>
+              <iframe width="480px" height="350px" src="https://docs.spring.io/spring-framework/docs/current/spring-framework-reference/html/images/spring-overview.png"></iframe>
             </section>
+
+            <section>
+              <iframe width="100%" height="80%" src="https://spring.io/projects"></iframe>
+            </section>
+            <!--section>
+              <iframe width="100%" height="80%" src="https://spring.io/docs/reference"></iframe>
+            </section-->
 
         </section>
 
         <section>
             <section data-markdown>
                 <textarea data-template>
-                    ## Demo
-                    #### Microservices mit Spring Boot
+                    ## demo
+                    #### a first microservice with Spring Boot
+                </textarea>
+            </section>
+            <section data-markdown>
+                <textarea data-template>
+                  #### REST-based service with 
+                  ```
+                                  +-------------+
+                             REST |             | JDBC /------\
+                             o----+   backend   +----->|  DB  |
+                                  |    (boot)   |      \------/
+                                  +-------------+
+                  ```
+                </textarea>
+            </section>
+
+            <!-- recap -->
+            <section>
+              <h2>Recap</h2>
+              <ol>
+                <li class="fragment">use Boots <code>*-starter</code> parents in your <code>pom.xml</code></li>
+                <li class="fragment">start with a <code>@SpringBootApplication</code>-annotated main-class</li>
+                <li class="fragment">use <code>@Configuration</code>-annotated classes to tweak your system</li>
+                <li class="fragment">get familiar with <code>@Enable*</code>-annotations</li>
+                <li class="fragment">define a bunch of <code>@Component</code>-classes as building blocks</li>
+            </section>
+        </section>
+
+        <section>
+            <section data-markdown>
+                <textarea data-template>
+                    ## demo
+                    #### Using Camel with Spring Boot
+                </textarea>
+            </section>
+            <section data-markdown>
+                <textarea data-template>
+                  #### Calling our REST-interface 
+                  ```
+                       +---------------+         +-------------+
+                  REST |               |    REST |             | JDBC /------\
+                  o----+   middleware  +--->o----+   backend   +----->|  DB  |
+                       |    (camel)    |         |    (boot)   |      \------/
+                       +---------------+         +-------------+
+                  ```
                 </textarea>
             </section>
         </section>
@@ -86,11 +137,59 @@
         <section>
             <section data-markdown>
                 <textarea data-template>
-                    ## Spring (Boot) und seine Wurzeln
-                    öfkasjalk fökjf öakjföaksfjöksaj föaksjf öakj ö
+                    ## demo
+                    #### cloud-deployment with CloudFoundry
                 </textarea>
             </section>
         </section>
+
+        <section>
+            <section data-markdown>
+                <textarea data-template>
+                    ## What's next?
+                    #### from one microservice to an architecutre of microservices
+                </textarea>
+            </section>
+
+            <section>
+              <h4>When having a whole bunch of microservices how to deal with ...</h4>
+              <ul style="list-style-type: none;">
+                <li class="fragment" data-fragment-index="1">... service-discovery <span class="fragment">: <b>Eureka</b></span></li>
+                <li class="fragment" data-fragment-index="2">... reciliency <span class="fragment">: <b>Hystrix</b> (Circuit Breaker)</li>
+                <li class="fragment" data-fragment-index="3">... configuration-management <span class="fragment">: <b>Cloud-Config</b></li>
+                <li class="fragment" data-fragment-index="4">... monitoring <span class="fragment">: <b>Zipkin</b> (Distributed Tracing)</li>
+              </ul>
+              <p/>
+              <h2 class="fragment" data-fragment-index="5">meet Spring Cloud</h2>
+            </section>
+        </section>
+        <section>
+            <section data-markdown>
+                <textarea data-template>
+                    ## thx
+                </textarea>
+            </section>
+            <section data-markdown>
+                <textarea data-template>
+                    #### Resources 
+                    <small>
+                      <a href="https://start.spring.io/">Spring Initilizr</a>, 
+                      <a href="https://projects.spring.io/spring-boot/">Spring Boot</a>,
+                      <a href="https://github.com/spring-projects/spring-boot/tree/master/spring-boot-starters">Spring Boot Starter</a>, 
+                      <a href="https://projects.spring.io/spring-cloud/">Spring Cloud</a>,
+                      <a href="https://docs.cloudfoundry.org/">Cloud Foundry Documentation</a>,
+                      <a href="https://github.com/apache/camel/tree/master/examples">Camel Examples (with Spring-Boot)</a>,
+                      <a href="https://github.com/camelinaction/camelinaction2">Sources Camel in Action 2</a>,
+                      <a href="http://zipkin.io/">Zipkin</a>,
+                      <a href="https://github.com/Netflix/Hystrix">Hystrix (Netflix)</a>,
+                      <a href="https://www.amazon.de/Release-Design-Deploy-Production-Ready-Software/dp/1680502395/">Release IT (Book)</a>,
+                      <a href="https://cloud.spring.io/spring-cloud-config/">Spring Cloud Config</a>,
+                      <a href="https://github.com/Netflix/eureka">Eureka (Netflix)</a>,
+                      <a href="https://www.amazon.de/Continuous-Delivery-Deployment-Automation-Addison-Wesley/dp/0321601912/">Continous Delivery (Book)</a>
+                    </small>
+                </textarea>
+            </section>
+          </section>
     </div>
 </div>
 
